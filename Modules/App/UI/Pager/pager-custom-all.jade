@@ -1,0 +1,12 @@
+.panel-heading-controls
+	span.paging-text(ng-show='pagination.last > 1')
+		| page
+		span.label.label-info {{ pagination.current }}
+		| of
+		span.label.label-info {{ pagination.last }}
+.panel-heading-controls
+	button.btn.btn-icon(type='button', tooltip-placement="top",uib-tooltip='Next',ng-click='setCurrent(pagination.current + 1)', ng-disabled='pagination.current == pagination.last', ng-class="pagination.current !== pagination.last ? 'btn-default' : 'btn-disabled'", ng-if="pagination.last > 1")
+		i.pe-7s-right-arrow
+.panel-heading-controls
+	button.btn.btn-icon(type='button',tooltip-placement="top",uib-tooltip='Previous',ng-click='setCurrent(pagination.current - 1)', ng-disabled='pagination.current == 1', ng-class="pagination.current !== 1 ? 'btn-default' : 'btn-disabled'", ng-if="pagination.last > 1")
+		i.pe-7s-left-arrow

@@ -1,0 +1,101 @@
+/*! if you add your own media css please above that name of your module must be their in all 4 places*/
+@media (max-width: 480px){
+	/*! Home page : google Analytics Dashboard*/
+	.home-dashboard .panel-title a{
+		font-size: 12px
+	}
+	.home-dashboard .panel-title i{
+		font-size: 23px
+	}
+	.column-chart , .session , .column-chart-user,.active-user-panel-glyphicon{
+		font-size: 53px
+	}
+	#layout-component-content-details{
+		overflow-y: auto;
+	}
+	.save-details{
+		bottom: inherit !important;
+	}
+}
+@media (min-width: 481px) and (max-width: 767px){
+	/*! Home page : google Analytics Dashboard*/
+	.home-dashboard .panel-title a{
+		font-size: 13px
+	}
+	.home-dashboard .panel-title i{
+		font-size: 23px
+	}
+	.column-chart ,.session , .column-chart-user,.active-user-panel-glyphicon{
+		font-size: 54px
+	}
+}
+@media (min-width: 768px) and (max-width: 1199px){
+	/*! Home page : google Analytics Dashboard*/
+	.home-dashboard .panel-title a{
+		font-size: 13px
+	}
+	.home-dashboard .panel-title i{
+		font-size: 25px
+	}
+	.column-chart ,.session ,.column-chart-user,.active-user-panel-glyphicon{
+		font-size: 55px
+	}
+}
+@media (min-width: 1200px){
+	/*! Home page : google Analytics Dashboard*/
+	.home-dashboard .panel-title a{
+		font-size: 15px
+	}
+	.home-dashboard .panel-title i{
+		font-size: 27px
+	}
+	.column-chart , .session ,.column-chart-user,.active-user-panel-glyphicon{
+		font-size: 60px
+	}
+}
+/*!5 columns layout with Twitter Bootstrap*/
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+    /*For Hpme Page Managment*/
+	#layout-component-content-details{
+		overflow-y: auto;
+	}
+	.save-details{
+		bottom: inherit !important;
+	}
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+    /*For Hpme Page Managment*/
+	#layout-component-content-details{
+		overflow: hidden;
+	}
+	.save-details{
+		bottom: 0 !important;
+	}
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}

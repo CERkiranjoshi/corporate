@@ -1,0 +1,79 @@
+ul.abn-tree
+    padding 0
+    cursor pointer
+    margin-bottom 0px
+.abn-tree-animate-enter,
+li.abn-tree-row.ng-enter
+    transition 200ms linear all
+    position relative
+    display block
+    opacity 0
+    max-height 0px
+
+.abn-tree-animate-enter.abn-tree-animate-enter-active,
+li.abn-tree-row.ng-enter-active
+    opacity 1
+    max-height 30px
+
+.abn-tree-animate-leave,
+li.abn-tree-row.ng-leave
+    transition 200ms linear all
+    position relative
+    display block
+    height 30px
+    max-height 30px
+    opacity 1
+
+.abn-tree-animate-leave.abn-tree-animate-leave-active,
+li.abn-tree-row.ng-leave-active
+    height 0px
+    max-height 0px
+    opacity 0
+
+ul.abn-tree
+    .abn-tree-row
+        i
+            margin-right 5px
+    li.abn-tree-row.level-1
+        position relative
+        margin-left 0px
+    li.abn-tree-row.level-2
+        position relative
+        margin-left 20px
+    li.abn-tree-row.level-3
+        position relative
+        margin-left 40px
+    li.abn-tree-row.level-4
+        position relative
+        margin-left 60px
+    li.abn-tree-row.level-5
+        position relative
+        margin-left 80px
+    li.abn-tree-row.level-6
+        position relative
+        margin-left 100px
+    li.abn-tree-row.level-7
+        position relative
+        margin-left 120px
+    li.abn-tree-row.level-8
+        position relative
+        margin-left 140px
+    li.abn-tree-row.level-9
+        position relative
+        margin-left 160px
+#active-category-mapping
+    .abn-tree-row.list-group-item.active
+        background-color rgba(136, 222, 208,0.7) !important
+        color white
+        font-weight bold
+        letter-spacing 1px
+        i
+            color #fff
+#custom-active-category-mapping
+    .abn-tree-row.list-group-item.active
+        background-color rgba(124, 181, 254,0.7) !important
+        color white
+        font-weight bold
+        letter-spacing 1px
+        i
+            color #fff

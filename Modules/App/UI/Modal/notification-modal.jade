@@ -1,0 +1,10 @@
+.modal-header
+	p.modal-title.text-uppercase {{ notify.title }}
+.modal-body
+	p {{ notify.notification }}
+.modal-footer(ng-show="notify.type != 'info'")
+	button.btn.btn-default.modal-btn.pull-left(ng-show="notify.type == 'confirm'", data-dismiss='modal', aria-hidden='true', ng-click='onResolution(false)') No
+	button.btn.btn-danger.modal-btn.pull-right(ng-show="notify.type == 'confirm'", ng-click='onResolution(true)') Yes
+	button.btn.btn-default.modal-btn.pull-right(ng-show="notify.type == 'message'", ng-click='onMessageResolution(true)',data-dismiss='modal', aria-hidden='true') OK
+	button.btn.btn-default.modal-btn.pull-left(ng-show="notify.type == 'continue'", ng-click='onResolution(false)' ,data-dismiss='modal', aria-hidden='true') Cancel
+	button.btn.btn-default.modal-btn.pull-right(ng-show="notify.type == 'continue'", ng-click='onResolution(true)') Continue

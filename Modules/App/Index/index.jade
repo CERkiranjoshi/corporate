@@ -1,0 +1,43 @@
+!!! 5
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		title Corporate
+		meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1')
+		meta(name='description', content='@@app_description')
+		meta(name='author', content='HotCustard')
+		link(rel='shortcut icon', href='/img/favicon.ico', type='image/x-icon')
+
+		<% if (config.environment && config.environment === 'prod') { %>
+		link(rel="stylesheet", href="css/style.min.css")
+		<% } else { %>
+		link(rel="stylesheet", href="css/style.css")
+		<% } %>
+		link(rel="stylesheet",href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
+		<% if (config.environment && config.environment === 'prod') { %>
+		script(src="js/scripts.min.js")
+		<% } else { %>
+		script(src="js/bundle.js")
+		script(src="js/modules.js")
+		<% } %>
+
+	body
+
+		//- Show something to non JS users
+		noscript Please enable Javascript to experience this site :)
+
+		//- Alerts & Messages
+		//- ng-cloak not working in new lib of angular ui.. so we added div above with display none & letter on app.coffee enable it to make it work.
+		div#alert-manage(style="display:none")
+			#alert-control(uib-alert,ng-repeat='alert in alerts', type="{{alert.type}}",ng-class="'alert-' + (alert.type || 'warning')", close='$root.closeAlert($index)', ng-cloak, ng-show="alerts.length > 0") {{alert.message}}
+
+
+		//- Area shown when signed in
+		div(ng-show="signedIn && !fullScreen")
+			//- Nav Bar
+
+		.page-area
+		
+			//- Area shown when signed in
+			div(ng-view)

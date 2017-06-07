@@ -1,0 +1,18 @@
+replacements:
+- app_name : corporate|corporate
+- app_description: corporate
+- app_version : 0.0.2
+
+#These get coppied to the libs folder
+js_component_includes:
+- jquery/jquery.js
+- jquery-ui/jquery-ui.js
+- angular/angular.js
+- angular-route/angular-route.js
+- angular-animate/angular-animate.js
+- angular-base64/angular-base64.js
+- angular-cookies/angular-cookies.js
+- angular-local-storage/dist/angular-local-storage.js
+- angular-bootstrap/ui-bootstrap-tpls.js
+- angular-touch/angular-touch.js
+- lodash/dist/lodash.js

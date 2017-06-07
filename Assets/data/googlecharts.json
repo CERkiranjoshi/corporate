@@ -1,0 +1,71 @@
+{
+  "colors": [
+    "#F3582B",
+    "#0F75BF",
+    "#88DED0",
+    "#02B0EF",
+    "#99CA3B"
+  ],
+  "bar": {
+    "groupWidth": "95%"
+  },
+  "titleTextStyle": {},
+  "is3D": false,
+  "backgroundColor": "#FAFAFA",
+  "chartArea": {
+    "left": "5%",
+    "top": "5%",
+    "width": "90%",
+    "height": "85%"
+  },
+  "hAxis": {
+    "allowContainerBoundaryTextCufoff": true,
+    "slantedText": false,
+    "textStyle": {
+      "color": "#A4A3A4",
+      "bold": false
+    },
+    "gridlines": {
+      "count": -1,
+      "color": "#FAFAFA"
+    }
+  },
+  "vAxis": {
+    "textStyle": {
+      "color": "#A4A3A4",
+      "bold": false
+    },
+    "gridlines": {
+      "count": -1,
+      "color": "#FAFAFA"
+    }
+  },
+  "tooltip": {
+    "textStyle": {
+      "color": "#C3C2C2",
+      "bold": false
+    }
+  },
+  "legend": {
+    "textStyle": {
+      "color": "#A4A3A4",
+      "bold": false
+    },
+    "position":"none",
+    "alignment":"center"
+  },
+  "animation":{
+    "duration" : 4000,
+    "startup" : true,
+    "easing": "out"
+  },
+  "annotations":{
+    "textStyle" : {
+      "bold" : true
+    }
+  },
+  "pieSliceTextStyle": {
+    "color": "#FFFFFF",
+    "bold":true
+    }
+}

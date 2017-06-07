@@ -1,0 +1,6 @@
+.modal-header
+	p.modal-title.text-uppercase {{ notify.title }}
+.modal-body.modal-log-view
+	pre {{ notify.notification | json}}
+.modal-footer
+	button.btn.btn-danger.modal-btn.pull-right(ng-show="notify.type == 'info'", ng-click='onMessageResolution(true)',data-dismiss='modal', aria-hidden='true') CLOSE

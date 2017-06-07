@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Pending Payment"
+  },
+  {
+    "name": "Suspected Fraud"
+  },
+  {
+    "name": "Payment Review"
+  },
+  {
+    "name": "Pending"
+  },
+  {
+    "name": "On Hold"
+  },
+  {
+    "name": "Complete"
+  },
+  {
+    "name": "Closed"
+  },
+  {
+    "name": "Cancelled"
+  },
+  {
+    "name": "PayPal"
+  }
+]

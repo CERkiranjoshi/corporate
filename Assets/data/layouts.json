@@ -1,0 +1,226 @@
+{
+  "layouts": [
+    {
+      "status": true,
+      "type": "landing",
+      "viewtype":"row",
+      "defaultcss":".container-fluid,.row>[class*=col-]{text-align:center}.content-div,body{margin:0}body{color:#000;background:#fff;padding:0;font-style:normal;position:relative;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-overflow-scrolling:touch;-webkit-font-smoothing:antialiased!important}.container-fluid{padding-right:0;padding-left:0;overflow:hidden}.home-page-text-link{text-decoration:none;color:#000}.main-div{background-color:#fff}.img-responsive{width:100%}@media (max-width:480px){.main-div{margin-bottom:10px}}@media (min-width:481px) and (max-width:767px){.main-div{margin-bottom:10px}}@media (min-width:768px) and (max-width:1199px){.main-div{margin-bottom:10px}}@media (min-width:1200px){.main-div{margin-bottom:15px}}",
+      "customcss":"",
+      "layout_mapid": "1",
+      "layout_uuid": "",
+      "content_uuid": "",
+      "layout_class" : "col-md-4 col-sm-4 col-xs-12",
+      "layout_name": "Row Layout",
+      "components": [
+        {
+          "name": "A",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "B",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "C",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "D",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "E",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        }
+      ]
+    },
+    {
+      "status": true,
+      "type": "landing",
+      "viewtype":"rowtext",
+      "defaultcss":".container-fluid,.row>[class*=col-]{text-align:center}.home-page-text-link,a{text-decoration:none}body{color:#000;background:#FFF;padding:0;margin:0;font-style:normal;font-weight:700;position:relative;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-overflow-scrolling:touch;-webkit-font-smoothing:antialiased!important}a:active,a:focus,a:hover{text-decoration:none;color:#9E9E9E}.shop-trends{background-color:#fff;color:#000;cursor:pointer;text-transform:uppercase;opacity:1;font-weight:700}.bijou-homepage{font-family:sans-serif;left:0;bottom:0;font-weight:400;width:100%;background:#fff;letter-spacing:1px}.side-page-text{font-family:arial;font-weight:400;color:#816566}.container-fluid{padding-right:0;padding-left:0;overflow:hidden}.home-page-text-link{color:#000}.main-div{background-color:#fff;margin:0}.content-div{margin:0;padding:0 6px 6px!important}@media (max-width:480px){.bijou-homepage{padding-top:8px;padding-bottom:8px;font-size:16px}.content-div{padding:0 8px!important}}@media (min-width:481px) and (max-width:767px){.bijou-homepage{padding-top:10px;padding-bottom:10px;font-size:18px}.content-div{padding:0 10px!important}}@media (min-width:768px) and (max-width:1199px){.bijou-homepage{padding-top:12px;padding-bottom:12px;font-size:24px}.content-div{padding:0 12px!important}}@media (min-width:1200px){.bijou-homepage{padding-top:15px;padding-bottom:15px;font-size:26px}.content-div{padding:0 15px!important}}",
+      "customcss":"",
+      "layout_mapid": "3",
+      "layout_uuid": "",
+      "content_uuid": "",
+      "layout_class" : "col-md-4 col-sm-4 col-xs-12",
+      "layout_name": "Row Layout with custom text",
+      "components": [
+        {
+          "name": "A",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "B",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "C",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "D",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        },
+        {
+          "name": "E",
+          "class": "viewtype-row col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":1480,
+          "height":986
+        }
+      ]
+    },
+    {
+      "status": true,
+      "type": "landing",
+      "viewtype":"mixed",
+      "defaultcss":"body{color:#333;font-size:16px;background:#FFF;padding:0;margin:0;font-style:normal;letter-spacing:1px;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;-webkit-overflow-scrolling:touch;-webkit-font-smoothing:antialiased!important}.home-page{margin-top:0!important}.container{padding-left:0;padding-right:0;overflow-x:hidden}.row>[class*=col-]{text-align:center}@media (max-width:480px){.row{margin-top:10px;margin-left:-5px;margin-right:-5px}.row>[class*=col-]{padding-right:5px;padding-left:5px}}@media (min-width:481px) and (max-width:767px){.row{margin-top:20px;margin-left:-10px;margin-right:-10px}.row>[class*=col-]{padding-right:10px;padding-left:10px}}@media (min-width:768px) and (max-width:1199px){.row{margin-top:24px;margin-left:-12px;margin-right:-12px}.row>[class*=col-]{padding-right:12px;padding-left:12px}}@media (min-width:1200px){.row{margin-top:30px;margin-left:-15px;margin-right:-15px}.row>[class*=col-]{padding-right:15px;padding-left:15px}}",
+      "customcss":"",
+      "layout_mapid": "2",
+      "layout_uuid": "",
+      "content_uuid": "",
+      "layout_name": "Standard Layout",
+      "layout_class" : "col-md-4 col-sm-4 col-xs-12",
+      "components": [
+        {
+          "name": "A",
+          "class": "viewtype-column col-md-12 col-sm-12 col-xs-12",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":true,
+          "linktype":"",
+          "width":1170,
+          "height":1755
+        },
+        {
+          "name": "B",
+          "class": "viewtype-row col-md-6 col-sm-6 col-xs-6 custom-width custom-margin",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":600,
+          "height":800
+        },
+        {
+          "name": "C",
+          "class": "viewtype-row col-md-6 col-sm-6 col-xs-6 custom-width",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":600,
+          "height":800
+        },
+        {
+          "name": "D",
+          "class": "viewtype-row col-md-6 col-sm-6 col-xs-6 custom-width custom-margin",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":600,
+          "height":800
+        },
+        {
+          "name": "E",
+          "class": "viewtype-row col-md-6 col-sm-6 col-xs-6 custom-width",
+          "data": "",
+          "content_uuid": "",
+          "link": "",
+          "image_url": "",
+          "autoheight":false,
+          "linktype":"",
+          "width":600,
+          "height":800
+        }
+      ]
+    }
+  ]
+}

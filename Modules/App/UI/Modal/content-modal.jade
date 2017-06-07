@@ -1,0 +1,66 @@
+.modal-header
+	span.modal-header-glyphicon(ng-if="content.type=='image'")
+		i.fa.fa-picture-o
+	span.modal-header-glyphicon(ng-if="content.type=='html'")
+		i.fa.fa-code
+	span.modal-header-glyphicon(ng-if="content.type=='css'")
+		i.fa.fa-css3
+	p.modal-title.text-uppercase {{ content.title }}
+.modal-body
+	.row
+		.col-md-6.col-sm-12-col-xs-12.text-center
+			img.img-thumbnail.previewfile-inner(ng-if="content.type=='image'",ng-src="{{content.url}}")
+			//textarea#contentdata(readonly,ng-if="content.type!='image'")
+			img.img-thumbnail.img-responsive(ng-if="content.type=='html'",ng-src='/img/html.png', alt='{{content.title}}')
+			img.img-thumbnail.img-responsive(ng-if="content.type=='css'",ng-src='/img/css.png', alt='{{content.title}}')
+		.col-md-6.col-sm-12-col-xs-12.text-left
+			form.form-horizontal
+				.form-group
+					label.control-label.col-sm-3.text-left(for='name') Name:
+					.col-sm-9
+						label.control-label.text-normal {{content.title}}
+				.form-group.hide
+					label.control-label.col-sm-3.text-left(for='type') Type:
+					.col-sm-9
+						label.control-label.text-normal {{content.type}}
+				.form-group
+					label.control-label.col-sm-3.text-left(for='email') Uploaded:
+					.col-sm-9
+						label.control-label.text-normal {{content.uploaded_on * 1000 | date:'dd MMM yyyy hh:mm:ss a'}}
+				.form-group
+					label.control-label.col-sm-3.text-left(for='addedby') Added By:
+					.col-sm-9
+						label.control-label.text-normal {{content.added_by}}
+				.form-group(ng-if="content.size !=null && content.size > 0")
+					label.control-label.col-sm-3.text-left(for='email') Size:
+					.col-sm-9
+						label.control-label.text-normal {{content.size}} B
+				.form-group(ng-show='content.width && content.width > 0')
+					label.control-label.col-sm-3.text-left(for='dimensions') Dimensions:
+					.col-sm-9
+						label.control-label.text-normal
+							b W
+							| {{content.width}}px X 
+							b H
+							| {{content.height}}px
+				.form-group
+					label.control-label.col-sm-3.text-left(for='view') View:
+					.col-sm-9
+						label.control-label.text-normal
+							a(href="{{content.url}}",target='_blank',tooltip-placement="top", uib-tooltip="View File")
+								span(ng-if="content.type=='image'")
+									i.fa.fa-picture-o
+								span(ng-if="content.type=='html'")
+									i.fa.fa-code
+								span(ng-if="content.type=='css'")
+									i.fa.fa-css3
+				.form-group(ng-if="folderLists.length > 1")
+					label.control-label.col-sm-3.text-left(for='folder') Add 2 Folder:
+					.col-sm-9
+						select.form-control.select-page-number(tooltip-placement="top", uib-tooltip="Folder Name",ng-model='foldername', ng-options="folder.name for folder in folderLists  | filter: {name:'!All'}")
+							option(value='') -- Select folder name --
+						button.btn.btn-primary.btn-sm(ng-disabled="foldername=='' || foldername == undefined || foldername == null",tooltip-placement="top",uib-tooltip='Save',ng-click="add2folder(foldername);$event.stopPropagation();",uib-dropdown-toggle)
+							i.pe-7s-plus.process-list-icon.fs20
+						span.show.mt10.text-success(ng-show="msg !=''") {{msg}}
+.modal-footer
+	button.btn.btn-danger.modal-btn.pull-right(ng-click='onResolution(true)' ,data-dismiss='modal', aria-hidden='true') Close

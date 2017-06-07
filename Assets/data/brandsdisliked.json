@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "brand": "KENZO",
+    "value":98
+  },
+  {
+    "id": 2,
+    "brand": "Fred Perry",
+    "value":103
+  },
+  {
+    "id": 3,
+    "brand": "Armani",
+    "value":43
+  },
+  {
+    "id": 4,
+    "brand": "Diesel",
+    "value":78
+  },
+  {
+    "id": 5,
+    "brand": "Ermenegildo Zegna",
+    "value":65
+  }
+]

@@ -1,0 +1,6 @@
+npm-debug.log*
+_BUILD
+.temp
+.idea
+bower_components
+node_modules

@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "product": "The Eyeshadow",
+    "value":78
+  },
+  {
+    "id": 2,
+    "product": "The 5 in 1 base",
+    "value":34
+  },
+  {
+    "id": 3,
+    "product": "The Angle brush",
+    "value":76
+  },
+  {
+    "id": 4,
+    "product": "The automatic eye pencil",
+    "value":34
+  },
+  {
+    "id": 5,
+    "product": "The blush brush",
+    "value":90
+  },
+  {
+    "id": 6,
+    "product": "The chubstick Lipstick",
+    "value":78
+  },
+  {
+    "id": 7,
+    "product": "The Cleansing Milk",
+    "value":76
+  },
+  {
+    "id": 8,
+    "product": "The concealer brush",
+    "value":90
+  },
+  {
+    "id": 9,
+    "product": "The Connectable applicators",
+    "value":34
+  },
+  {
+    "id": 10,
+    "product": "The Curling mascara",
+    "value":78
+  }]

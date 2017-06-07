@@ -1,0 +1,9 @@
+ul.abn-tree.custom-catlist-sortable
+	li.abn-tree-row.list-group-item(ng-repeat='row in tree_rows | filter:{visible:true} track by row.branch.uuid',ng-animate="'abn-tree-animate'",ng-class="'level-' + {{ row.level }} + (row.branch.selected ? ' active ':'') + ' ' +row.classes.join(' ')")
+		span(ng-click="user_clicks_branch(row.branch)")
+			i.indented.tree-icon(ng-class="row.tree_icon",ng-click="row.branch.expanded = !row.branch.expanded")
+			span.tree-label {{row.label}} | {{ row.branch.id }}
+		span.badge.childlg
+			| {{row.branch.children.length}}
+		span.badge.childlg(style="background-color:{{colors[row.level]}}")
+			| {{row.level}}

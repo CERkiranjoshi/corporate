@@ -1,0 +1,128 @@
+.modal-body(style="padding-top:10px;padding-bottom:2px;")
+	.page
+		loader(ng-show="loadingContentPage", loading-text="loadingText")
+		div(ng-show='!loadingContentPage')
+			#contentmapping.row.curator-table-details-page.gallery-managment
+				.col-xs-12.col-lg-12.col-md-12.col-sm-12.animated-long
+					.panel-group
+						#custom-active-content-mapping.panel.panel-info.panel-basic.content-right-panel
+							.panel-heading
+								.gallery-head
+									.btn-group.pull-left
+										button.btn.btn-default.btn-sm(ng-click="viewtype = 'grid'", ng-class="{ 'active': viewtype == 'grid' }", tooltip-placement="bottom",uib-tooltip='Grid')
+											span.glyphicon.glyphicon-th
+										button.btn.btn-default.btn-sm(ng-click="viewtype = 'list'", ng-class="{ 'active': viewtype == 'list' }", tooltip-placement="bottom",uib-tooltip='List')
+											span.glyphicon.glyphicon-list
+										button.btn.btn-default.btn-sm(ng-click="viewtype = 'file';clearFile()", ng-class="{ 'active': viewtype == 'file' }", tooltip-placement="bottom",uib-tooltip='File')
+											span.glyphicon.glyphicon-file
+									.btn-group.pull-right
+										button.btn.btn-default.btn-sm(ng-click="search.type = 'selected' ",ng-show="selectedContents.length>0",tooltip-placement="bottom",uib-tooltip='Selectd Files')
+											span.badge(ng-class="{'selected-content-badge': search.type == 'selected'}") {{selectedContents.length}}
+										button.btn.btn-default.btn-sm(ng-class="{'active': search.type == 'image'}", ng-click="search.type = 'image' ", tooltip-placement="bottom",uib-tooltip='Image')
+											span.glyphicon.glyphicon-picture
+										button.btn.btn-default.btn-sm.hide(ng-class="{'active': search.type == 'video'}", ng-click="search.type = 'video' ", tooltip-placement="bottom",uib-tooltip='Video')
+											span.glyphicon.glyphicon-facetime-video
+										button.btn.btn-default.btn-sm(ng-class="{'active': search.type == 'html'}", ng-click="search.type = 'html' ", tooltip-placement="bottom",uib-tooltip='HTML')
+											i.fa.fa-code
+										button.btn.btn-default.btn-sm(ng-class="{'active': search.type == 'css'}", ng-click="search.type = 'css' ", tooltip-placement="bottom",uib-tooltip='CSS')
+											i.fa.fa-css3
+										button.btn.btn-default.btn-sm.last-btn(ng-class="{'active': search.type == ''}",ng-click="search.type = '' ", tooltip-placement="bottom",uib-tooltip='All')
+											i.fa.fa-globe
+										form.form-inline.search-content.hidden-xs.hidden-sm(role='search')
+											.form-group
+												input.form-control.search-content-text(ng-model="search.title",type='text', placeholder='Search')
+											button.btn.btn-default.btn-sm(tooltip-placement="bottom",uib-tooltip='Search')
+												span.glyphicon.glyphicon-search
+										button.btn.btn-danger.btn-sm.pull-right(data-dismiss='modal', aria-hidden='true', ng-click='onCustomModalResolution(false)', tooltip-placement="bottom",uib-tooltip='Close')
+											i.fa.fa-times
+										button.btn.btn-default.btn-sm.pull-right(ng-disabled="!checkContentSelected()",ng-click='onCustomModalResolution(true)', tooltip-placement="bottom",uib-tooltip='Apply')
+											i.fa.fa-floppy-o
+										
+								span.panel-title.panel-collapse-custom(style="visibility:hidden")
+									| Header
+							.panel-body.panel-grid-view(ng-show="viewtype == 'grid'")
+								.row
+									.add-file(ng-class="{ 'col-md-3 col-sm-6 col-xs-12': !folders_toggle, 'col-md-2 col-sm-4 col-xs-12 animated-long': folders_toggle }")
+										.gallery-grid-view(ng-click="viewtype = 'file';clearFile()")
+											.add-element.unselectable
+												span.add-text
+													span.glyphicon.glyphicon-plus
+													|  Add File
+									.animate-repeat.content-repeat(draggablecontent, ng-class="{ 'col-md-3 col-sm-6 col-xs-12': !folders_toggle, 'col-md-2 col-sm-4 col-xs-12 animated-long': folders_toggle }",ng-animate="'animate'",ng-repeat="content in contentList | filter : search.title | filter:filterbyMediaType | orderBy: '-uploaded_on'")
+										.thumbnail-box-wrapper
+											.thumbnail-box
+												.thumb-content
+													.center-vertical
+														.center-content
+															.thumb-btn.animated.zoomIn
+																button.btn.btn-primary.btn-sm.btn-content-inner.hide(tooltip-placement="top",uib-tooltip='View',ng-click="viewContent(content)")
+																	span.glyphicon.glyphicon-eye-open
+																button.btn.btn-success.btn-sm.btn-content-inner(ng-if="!isInSelected(content)",tooltip-placement="top",uib-tooltip='Select',ng-click="selectContent(content)")
+																	span.glyphicon.glyphicon-plus
+																button.btn.btn-warning.btn-sm.btn-content-inner(ng-if="isInSelected(content)",tooltip-placement="top",uib-tooltip='Unselect',ng-click="selectContent(content)")
+																	span.glyphicon.glyphicon-minus
+																button.btn.btn-danger.btn-sm.btn-content-inner.hide(tooltip-placement="top",uib-tooltip='Delete',ng-click="deleteContent(content)")
+																	span.glyphicon.glyphicon-trash
+																button.btn.btn-remove.btn-sm.btn-content-inner.hide(ng-show="selectedFolder.name!='All'",tooltip-placement="top",uib-tooltip='Remove',ng-click="removeContentFromFolder(content)")
+																	span.glyphicon.glyphicon-minus.glyphicon-btn-remove
+												.thumb-overlay.bg-black
+												.innerdata
+													img(ng-if="content.type=='image'",ng-src='{{content.url}}', alt='{{content.title}}')
+													img(ng-if="content.type=='html'",ng-src='/img/html.png', alt='{{content.title}}')
+													img(ng-if="content.type=='css'",ng-src='/img/css.png', alt='{{content.title}}')
+												span.glyphicon.glyphicon-ok.icon-selected-grid(ng-if="isInSelected(content)")
+											.thumb-pane
+												p.thumb-heading
+													| {{content.title | limitTo:18}}
+													small {{content.uploaded_on * 1000 | date:'dd MMM yyyy hh:mm:ss a'}}
+							.panel-body.panel-grid-view(ng-show="viewtype == 'list'")
+								.col-xs-12
+									ul.list-group.team-member
+										li.animate-repeat.team-member-list.list-group-item.clearfix(draggablecontent,ng-animate="'animate'",ng-repeat="content in contentList | filter : search.title | filter:filterbyMediaType | orderBy: '-uploaded_on'")
+											.pull-left.mr
+												img.img-responsive.thumb48(ng-if="content.type=='image'",ng-src='{{content.url}}', alt='{{content.title}}')
+												img.img-responsive.thumb48(ng-if="content.type=='html'",ng-src='/img/html.png', alt='{{content.title}}')
+												img.img-responsive.thumb48(ng-if="content.type=='css'",ng-src='/img/css.png', alt='{{content.title}}')
+											p.mb0.fs14.text-uppercase {{content.title | limitTo:26}}
+											small {{content.uploaded_on * 1000 | date:'dd MMM yyyy hh:mm:ss a'}}
+											.pull-right(style="margin-top:-15px")
+												button.btn.btn-primary.btn-sm.btn-content-inner.hide(tooltip-placement="top",uib-tooltip='View',ng-click="viewContent(content)")
+													span.glyphicon.glyphicon-eye-open
+												button.btn.btn-success.btn-sm.btn-content-inner(ng-if="!isInSelected(content)",tooltip-placement="top",uib-tooltip='Select',ng-click="selectContent(content)")
+													span.glyphicon.glyphicon-plus
+												button.btn.btn-warning.btn-sm.btn-content-inner(ng-if="isInSelected(content)",tooltip-placement="top",uib-tooltip='Remove',ng-click="selectContent(content)")
+													span.glyphicon.glyphicon-minus
+												button.btn.btn-danger.btn-sm.btn-content-inner.hide(tooltip-placement="top",uib-tooltip='Delete',ng-click="deleteContent(content)")
+													span.glyphicon.glyphicon-trash
+												button.btn.btn-remove.btn-sm.btn-content-inner.hide(ng-show="selectedFolder.name!='All'",tooltip-placement="top",uib-tooltip='Remove',ng-click="removeContentFromFolder(content)")
+													span.glyphicon.glyphicon-minus.glyphicon-btn-remove
+							.panel-body.panel-grid-view(ng-show="viewtype == 'file'")
+								.row(ng-if="file.name || (invalidFiles!=null && invalidFiles.length>0) ")
+									.col-md-12.col-sm-12.col-xs-12
+										p.mb0
+											span.mr5(ng-if="file.name") File : {{file.name}}
+											span.text-success.mr5.text-bold(ng-if="file.progress==100") Uploaded Successfully.
+											span.mr5(ng-if="file.progress==100")
+												a(href="javascript:void(0)",ng-click="backtomain()") Back to Gallery
+											span(ng-if="file.progress==100") Or  Upload new one 
+											span.text-danger(ng-if="invalidFiles!=null && invalidFiles.length>0",ng-repeat="f in invalidFiles")
+												span(ng-if="f.$errorMessages.pattern") Invalid File :  {{f.name}} , size: {{f.size}}B , type:{{f.type}}, Please select {{f.$errorParam}} File
+												span(ng-if="f.$errorMessages.maxSize") The file size exceeds the limit allowed,Please select upto {{f.$errorParam}},File : {{f.name}} ,size: {{f.size}}B
+												span.show(ng-if="f.customFail") Something went wrong while uploading this file,try again later or upload another one.
+								.row(ng-if="file.name && file.progress >= 0")
+									.col-md-12.col-sm-12.col-xs-12.progressbar
+										div.progress.progress-striped(ng-show='file.progress >= 0')
+											div.progress-bar.active(style='width:{{file.progress}}%', ng-bind="file.progress + '%'")
+								.row
+									.dragndropzone(ng-class="{ 'col-md-12 col-sm-12 col-xs-12': !file.name, 'col-md-6 col-sm-6 col-xs-12': file.name }")
+										.drop-box.add-element.unselectable(ngf-select,ngf-model-invalid="invalidFiles",ngf-pattern="'image/*,.html,.css'",ngf-drop,ngf-drag-over-class="'dragover'",ngf-multiple="false",ng-model="file",ngf-max-size='5MB',accept='image/*,.html,.css')
+											span.add-text
+												span.glyphicon.glyphicon-plus
+												|  Select File Or Drop File
+									.col-md-6.col-sm-6.col-xs-12.previewfile(ng-if="file.name")
+										img.img-thumbnail.previewfile-inner(ng-if="uploadType=='image'",ngf-src="file")
+										textarea#contentdata(readonly,ng-if="uploadType!='image'",ngf-src="file",ng-init="getData(file)")
+										.form-group.upload-manage-button
+											.btn-group.btn-group-justified
+												button.btn.btn-success.btn-md.btn-group-justified-filter(ng-disabled="file.progress > 0",tooltip-placement="top", uib-tooltip="Upload File",ng-click='uploadFiles(file)') Upload
+												button.btn.btn-danger.btn-md.btn-group-justified-filter.reset-filter-button(ng-disabled="file.progress > 0",tooltip-placement="top", uib-tooltip="Remove File",ng-click='clearFile()') Remove

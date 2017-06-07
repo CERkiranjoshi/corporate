@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "category": "Beauty"
+  },
+  {
+    "id": 2,
+    "category": "Books"
+  },
+  {
+    "id": 3,
+    "category": "Appliances"
+  },
+  {
+    "id": 4,
+    "category": "Clothing & Accessories"
+  },
+  {
+    "id": 5,
+    "category": "Health & Personal Care"
+  },
+  {
+    "id": 6,
+    "category": "Jewellery"
+  },
+  {
+    "id": 7,
+    "category": "Shoes & Handbags"
+  },
+  {
+    "id": 8,
+    "category": "Watches"
+  },
+  {
+    "id": 9,
+    "category": "Sports, Fitness & Outdoors"
+  },
+  {
+    "id": 10,
+    "category": "Luggage & Bags"
+  }
+]
