@@ -53,9 +53,9 @@ module.exports = function(grunt) {
   };
   require('load-grunt-tasks')(grunt);
   grunt.registerTask('default', ['dev']);
-  grunt.registerTask('devandrelease', ['clean:temp','jade:compile_modules', 'ngtemplates', 'copy:all','concat']);
+  grunt.registerTask('devandrelease', ['clean:temp','jade:compile_modules', 'ngtemplates', 'copy:all','sass','concat']);
   grunt.registerTask('dev', ['clean:dev', 'devandrelease', 'template:dev', 'copy:dev', 'replace:dev']);
-  grunt.registerTask('release', ['clean:release', 'devandrelease', 'template:release', 'copy:release', 'uglify:all', 'requirejs:styles', 'copy:release_post_processed', 'copy:release_files', 'replace:release']);
+  grunt.registerTask('release', ['clean:release', 'devandrelease', 'template:release', 'copy:release', 'uglify:all','cssmin','copy:release_post_processed', 'replace:release','clean:js']);
   return grunt.config.init({
     PKG: grunt.file.readJSON('package.json'),
     SETTINGS: grunt.file.readYAML('settings.yaml'),
@@ -70,14 +70,15 @@ module.exports = function(grunt) {
     ABBR: '<%= PKG.abbr%>',
     watch: {
       scripts: {
-        files: ['<%= MODULES_DIR %>**/*.js', '<%= MODULES_DIR %>**/*.sass', '<%= MODULES_DIR %>**/*.html'],
+        files: ['<%= MODULES_DIR %>**/*.js', '<%= MODULES_DIR %>**/*.scss', '<%= MODULES_DIR %>**/*.html'],
         tasks: 'dev'
       }
     },
     clean: {
       temp: '<%= TMP_DIR %>',
       dev: '<%= BUILD_DIR_DEV %>',
-      release: '<%= BUILD_DIR_RELEASE %>'
+      release: '<%= BUILD_DIR_RELEASE %>',
+      js: ['_BUILD/release/client/js/**/*.js', '!_BUILD/release/client/js/*.min.js']
     },
     bower: {
       install: {
@@ -96,22 +97,27 @@ module.exports = function(grunt) {
     connect: {
       server: {
         options: {
-          port: 8000,
+          port: 9999,
           base: '_BUILD/dev/client',
           keepalive: true,
           open: true
         }
       }
     },
-    stylus: {
-      compile_modules: {
+    sass: {                              // Task
+      dist: {                            // Target
         options: {
-          'include css': true
+          sourcemap:'none',                      // Target options
+          style: 'expanded'
         },
-        files: {
-          '<%= TMP_DIR %>client/css/style.css': ['<%= COMPONENTS_DIR %>angular-loading-bar/src/loading-bar.css', '<%= COMPONENTS_DIR %>components-font-awesome/css/font-awesome.css', '<%= MODULES_DIR %>**/*.styl', '!<%= MODULES_DIR %>**/*.inc.styl']
-        }
-      }
+         files:[{
+        expand: true,
+        cwd: '<%= MODULES_DIR %>',
+        src: ['**/*.scss'],
+        dest:  '<%= ASSET_DIR %>css',
+        ext: '.css'
+      }]
+    }
     },
     jade: {
       compile_modules: {
@@ -162,13 +168,10 @@ module.exports = function(grunt) {
         ]
       },
       dev: {
-        files: [
-          {
-            '<%= CLIENT_DIR_DEV %>css/animate.css': '<%= COMPONENTS_DIR %>animate.css/animate.css'
-          }, {
+        files: [{
             expand: true,
             cwd: '<%= ASSET_DIR %>',
-            src: ['**'],
+            src: ['data/**','fonts/**','img/**'],
             dest: '<%= CLIENT_DIR_DEV %>'
           }, {
             expand: true,
@@ -187,16 +190,16 @@ module.exports = function(grunt) {
         files: [
           {
             '<%= CLIENT_DIR_RELEASE %>index.html': '<%= TMP_DIR %>client/index.html',
-            '<%= TMP_DIR %>client/css/loading-bar.css': '<%= COMPONENTS_DIR %>angular-loading-bar/build/loading-bar.css'
           }, {
             expand: true,
             cwd: '<%= COMPONENTS_DIR %>components-font-awesome/fonts/',
             src: ['**'],
             dest: '<%= CLIENT_DIR_RELEASE %>fonts/'
-          }, {
+          },
+          {
             expand: true,
             cwd: '<%= ASSET_DIR %>',
-            src: ['**'],
+            src: ['data/**','fonts/**','img/**'],
             dest: '<%= CLIENT_DIR_RELEASE %>'
           }
         ]
@@ -208,13 +211,11 @@ module.exports = function(grunt) {
             cwd: '<%= TMP_DIR %>client/js/',
             src: '**/*.js',
             dest: '<%= CLIENT_DIR_RELEASE %>js/'
-          }
-        ]
-      },
-      release_files: {
-        files: [
-          {
-            '<%= CLIENT_DIR_RELEASE %>css/style.min.css': '<%= TMP_DIR %>client/css/style.min.css'
+          },{
+            expand: true,
+            cwd: '<%= TMP_DIR %>client/css/',
+            src: '**/**.min.css',
+            dest: '<%= CLIENT_DIR_RELEASE %>css/'
           }
         ]
       }
@@ -270,7 +271,8 @@ module.exports = function(grunt) {
         basic_and_extras: {
             files: {
                 '<%= TMP_DIR %>client/js/modules.js': '<%= MODULES_DIR %>**/*.js',
-                '<%= TMP_DIR %>client/js/bundle.js': ['<%= TMP_DIR %>client/js/libs/jquery.js','<%= TMP_DIR %>client/js/libs/jquery-ui.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-route.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-animate.js','<%= TMP_DIR %>client/js/libs/angular-base64.js','<%= TMP_DIR %>client/js/libs/angular-cookies.js','<%= TMP_DIR %>client/js/libs/angular-local-storage.js','<%= TMP_DIR %>client/js/libs/ui-bootstrap-tpls.js','<%= TMP_DIR %>client/js/libs/angular-touch.js','<%= TMP_DIR %>client/js/libs/lodash.js','<%= TMP_DIR %>client/js/app.templates.js']
+                '<%= TMP_DIR %>client/js/bundle.js': ['<%= TMP_DIR %>client/js/libs/jquery.js','<%= TMP_DIR %>client/js/libs/jquery-ui.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-route.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-animate.js','<%= TMP_DIR %>client/js/libs/angular-base64.js','<%= TMP_DIR %>client/js/libs/angular-cookies.js','<%= TMP_DIR %>client/js/libs/angular-local-storage.js','<%= TMP_DIR %>client/js/libs/ui-bootstrap-tpls.js','<%= TMP_DIR %>client/js/libs/angular-touch.js','<%= TMP_DIR %>client/js/libs/lodash.js','<%= TMP_DIR %>client/js/app.templates.js'],
+                '<%= TMP_DIR %>client/css/style.css': '<%= ASSET_DIR %>css/**/*.css'
               }
         }
       },
@@ -282,8 +284,20 @@ module.exports = function(grunt) {
       },
       all: {
         files: {
-          '<%= TMP_DIR %>client/js/scripts.min.js': ['<%= TMP_DIR %>client/js/libs/lodash.js', '<%= TMP_DIR %>client/js/libs/jquery.js', '<%= TMP_DIR %>client/js/libs/jquery-ui.js', '<%= TMP_DIR %>client/js/libs/jquery.flip.js', '<%= TMP_DIR %>client/js/libs/hammer.js', '<%= TMP_DIR %>client/js/libs/angular.js', '<%= TMP_DIR %>client/js/libs/angular-ui-router.js', '<%= TMP_DIR %>client/js/libs/angular-animate.js', '<%= TMP_DIR %>client/js/libs/angular-touch.js', '<%= TMP_DIR %>client/js/libs/angular-cookies.js', '<%= TMP_DIR %>client/js/libs/angular-hammer.js', '<%= TMP_DIR %>client/js/libs/angular-base64.js', '<%= TMP_DIR %>client/js/libs/angular-local-storage.js', '<%= TMP_DIR %>client/js/libs/ng-file-upload-shim.js', '<%= TMP_DIR %>client/js/libs/ng-file-upload.js', '<%= TMP_DIR %>client/js/libs/dirPagination.js', '<%= TMP_DIR %>client/js/libs/ui-bootstrap-tpls.js', '<%= TMP_DIR %>client/js/libs/xeditable.js', '<%= TMP_DIR %>client/js/libs/slider.js', '<%= TMP_DIR %>client/js/*.js', '!<%= TMP_DIR %>client/js/main.js']
+          '<%= TMP_DIR %>client/js/modules.min.js': '<%= MODULES_DIR %>**/*.js',
+          '<%= TMP_DIR %>client/js/bundle.min.js': ['<%= TMP_DIR %>client/js/libs/jquery.js','<%= TMP_DIR %>client/js/libs/jquery-ui.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-route.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-animate.js','<%= TMP_DIR %>client/js/libs/angular-base64.js','<%= TMP_DIR %>client/js/libs/angular-cookies.js','<%= TMP_DIR %>client/js/libs/angular-local-storage.js','<%= TMP_DIR %>client/js/libs/ui-bootstrap-tpls.js','<%= TMP_DIR %>client/js/libs/angular-touch.js','<%= TMP_DIR %>client/js/libs/lodash.js','<%= TMP_DIR %>client/js/app.templates.js']
         }
+      }
+    },
+    cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: '<%= TMP_DIR %>client/css/',
+          src: ['*.css'],
+          dest: '<%= TMP_DIR %>client/css/',
+          ext: '.min.css'
+        }]
       }
     }
   });

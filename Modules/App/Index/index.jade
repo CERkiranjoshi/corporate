@@ -33,11 +33,7 @@ html(lang='en')
 			#alert-control(uib-alert,ng-repeat='alert in alerts', type="{{alert.type}}",ng-class="'alert-' + (alert.type || 'warning')", close='$root.closeAlert($index)', ng-cloak, ng-show="alerts.length > 0") {{alert.message}}
 
 
-		//- Area shown when signed in
-		div(ng-show="signedIn && !fullScreen")
-			//- Nav Bar
+		include ../UI/Header/header.html
 
 		.page-area
-		
-			//- Area shown when signed in
 			div(ng-view)

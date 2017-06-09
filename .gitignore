@@ -2,5 +2,8 @@ npm-debug.log*
 _BUILD
 .temp
 .idea
+.sass-cache
+nbproject
+Assets/css/*
 bower_components
 node_modules

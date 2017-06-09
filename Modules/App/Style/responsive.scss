@@ -1,0 +1,148 @@
+@media(max-width: 480px) {
+	.column-chart {
+		font-size: 53px;
+	}
+	.session {
+		font-size: 53px;
+	}
+	.column-chart-user {
+		font-size: 53px;
+	}
+	.active-user-panel-glyphicon {
+		font-size: 53px;
+	}
+	#layout-component-content-details {
+		overflow-y: auto;
+	}
+	.save-details {
+		bottom: inherit !important;
+	}
+	.home-dashboard .panel-title {
+		a {
+			font-size: 12px;
+		}
+		i {
+			font-size: 23px;
+		}
+	}
+}
+@media(min-width: 481px) and(max-width: 767px) {
+	.column-chart {
+		font-size: 54px;
+	}
+	.session {
+		font-size: 54px;
+	}
+	.column-chart-user {
+		font-size: 54px;
+	}
+	.active-user-panel-glyphicon {
+		font-size: 54px;
+	}
+	.home-dashboard .panel-title {
+		a {
+			font-size: 13px;
+		}
+		i {
+			font-size: 23px;
+		}
+	}
+}
+@media(min-width: 768px) and(max-width: 1199px) {
+	.column-chart {
+		font-size: 55px;
+	}
+	.session {
+		font-size: 55px;
+	}
+	.column-chart-user {
+		font-size: 55px;
+	}
+	.active-user-panel-glyphicon {
+		font-size: 55px;
+	}
+	.home-dashboard .panel-title {
+		a {
+			font-size: 13px;
+		}
+		i {
+			font-size: 25px;
+		}
+	}
+}
+@media(min-width: 1200px) {
+	.column-chart {
+		font-size: 60px;
+	}
+	.session {
+		font-size: 60px;
+	}
+	.column-chart-user {
+		font-size: 60px;
+	}
+	.active-user-panel-glyphicon {
+		font-size: 60px;
+	}
+	.col-lg-15 {
+		width: 20%;
+		float: left;
+	}
+	.home-dashboard .panel-title {
+		a {
+			font-size: 15px;
+		}
+		i {
+			font-size: 27px;
+		}
+	}
+}
+.col-xs-15 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+	width: 20%;
+	float: left;
+}
+.col-sm-15 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.col-md-15 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.col-lg-15 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+@media(min-width: 768px) {
+	.col-sm-15 {
+		width: 20%;
+		float: left;
+	}
+	#layout-component-content-details {
+		overflow-y: auto;
+	}
+	.save-details {
+		bottom: inherit !important;
+	}
+}
+@media(min-width: 992px) {
+	.col-md-15 {
+		width: 20%;
+		float: left;
+	}
+	#layout-component-content-details {
+		overflow: hidden;
+	}
+	.save-details {
+		bottom: 0 !important;
+	}
+}
