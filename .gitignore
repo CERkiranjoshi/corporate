@@ -3,6 +3,7 @@ _BUILD
 .temp
 .idea
 .sass-cache
+.bowerrc
 nbproject
 Assets/css/*
 bower_components

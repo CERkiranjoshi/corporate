@@ -164,6 +164,20 @@ module.exports = function(grunt) {
             cwd: '<%= COMPONENTS_DIR %>',
             src: get_active_js_libs(),
             dest: '<%= TMP_DIR %>client/js/libs/'
+          },
+          {
+            expand: true,
+            flatten: true,
+            cwd: '<%= COMPONENTS_DIR %>',
+            src: ['bootstrap/dist/css/bootstrap.css','bootstrap/dist/css/bootstrap-theme.css'],
+            dest: '<%= TMP_DIR %>client/css/'
+          },
+          {
+            expand: true,
+            flatten: true,
+            cwd: '<%= COMPONENTS_DIR %>',
+            src: ['bootstrap/dist/fonts/*','components-font-awesome/fonts/*'],
+            dest: '<%= TMP_DIR %>client/fonts/'
           }
         ]
       },
@@ -173,11 +187,6 @@ module.exports = function(grunt) {
             cwd: '<%= ASSET_DIR %>',
             src: ['data/**','fonts/**','img/**'],
             dest: '<%= CLIENT_DIR_DEV %>'
-          }, {
-            expand: true,
-            cwd: '<%= COMPONENTS_DIR %>components-font-awesome/fonts/',
-            src: ['**'],
-            dest: '<%= CLIENT_DIR_DEV %>fonts/'
           }, {
             expand: true,
             cwd: '<%= TMP_DIR %>client/',
@@ -190,11 +199,6 @@ module.exports = function(grunt) {
         files: [
           {
             '<%= CLIENT_DIR_RELEASE %>index.html': '<%= TMP_DIR %>client/index.html',
-          }, {
-            expand: true,
-            cwd: '<%= COMPONENTS_DIR %>components-font-awesome/fonts/',
-            src: ['**'],
-            dest: '<%= CLIENT_DIR_RELEASE %>fonts/'
           },
           {
             expand: true,
@@ -216,6 +220,11 @@ module.exports = function(grunt) {
             cwd: '<%= TMP_DIR %>client/css/',
             src: '**/**.min.css',
             dest: '<%= CLIENT_DIR_RELEASE %>css/'
+          },{
+            expand: true,
+            cwd: '<%= TMP_DIR %>client/fonts/',
+            src: ['**'],
+            dest: '<%= CLIENT_DIR_RELEASE %>fonts/'
           }
         ]
       }
@@ -272,7 +281,7 @@ module.exports = function(grunt) {
             files: {
                 '<%= TMP_DIR %>client/js/modules.js': '<%= MODULES_DIR %>**/*.js',
                 '<%= TMP_DIR %>client/js/bundle.js': ['<%= TMP_DIR %>client/js/libs/jquery.js','<%= TMP_DIR %>client/js/libs/jquery-ui.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-route.js','<%= TMP_DIR %>client/js/libs/angular.js','<%= TMP_DIR %>client/js/libs/angular-animate.js','<%= TMP_DIR %>client/js/libs/angular-base64.js','<%= TMP_DIR %>client/js/libs/angular-cookies.js','<%= TMP_DIR %>client/js/libs/angular-local-storage.js','<%= TMP_DIR %>client/js/libs/ui-bootstrap-tpls.js','<%= TMP_DIR %>client/js/libs/angular-touch.js','<%= TMP_DIR %>client/js/libs/lodash.js','<%= TMP_DIR %>client/js/app.templates.js'],
-                '<%= TMP_DIR %>client/css/style.css': '<%= ASSET_DIR %>css/**/*.css'
+                '<%= TMP_DIR %>client/css/style.css': ['<%= TMP_DIR %>client/css/*.css','<%= ASSET_DIR %>css/**/*.css']
               }
         }
       },
@@ -294,7 +303,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= TMP_DIR %>client/css/',
-          src: ['*.css'],
+          src: ['style.css'],
           dest: '<%= TMP_DIR %>client/css/',
           ext: '.min.css'
         }]

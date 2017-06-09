@@ -16,7 +16,8 @@ html(lang='en')
 		<% } %>
 		link(rel="stylesheet",href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css")
 		<% if (config.environment && config.environment === 'prod') { %>
-		script(src="js/scripts.min.js")
+		script(src="js/bundle.min.js")
+		script(src="js/modules.min.js")
 		<% } else { %>
 		script(src="js/bundle.js")
 		script(src="js/modules.js")
