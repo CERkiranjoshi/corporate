@@ -5,29 +5,33 @@
                 <span>+89 730 812 973</span>
         </div>
         <div class="col-md-6 col-sm-6 col-xs-12 pull-right text-right">
-            <a href="http://facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="http://twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="http://instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a href="https://in.pinterest.com/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
-            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            <a href="http://facebook.com" target="_blank" tooltip-placement="bottom" uib-tooltip="Facebook" ><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="http://twitter.com" tooltip-placement="bottom" uib-tooltip="Twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="http://instagram.com" tooltip-placement="bottom" uib-tooltip="Instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+            <a href="https://in.pinterest.com/" tooltip-placement="bottom" uib-tooltip="Pinterest" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+            <a href="https://plus.google.com/"  tooltip-placement="bottom" uib-tooltip="Google+" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
         </div>
     </div>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-custom-white">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Corporate</a>
+                <a class="navbar-brand text-uppercase" href="#home"><i class="fa fa-contao logo-icon" aria-hidden="true"></i><strong>Corporate Portal</strong></a>
             </div>
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li class="dropdown" uib-dropdown><a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active"><a href="#"><i class="fa fa-home menu-icon" aria-hidden="true"></i>Home</a></li>
+                <li class="dropdown" uib-dropdown><a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" href="#"><i class="fa fa-file menu-icon" aria-hidden="true"></i>Article<span class="caret"></span></a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
-                        <li><a href="#">Page 1-1</a></li>
-                        <li><a href="#">Page 1-2</a></li>
-                        <li><a href="#">Page 1-3</a></li>
+                        <li><a href="#">Article 1</a></li>
+                        <li><a href="#">Article 2</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
+                <li class="dropdown" uib-dropdown><a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" href="#"><i class="fa fa-renren menu-icon" aria-hidden="true"></i>Research<span class="caret"></span></a>
+                    <ul class="dropdown-menu" uib-dropdown-menu>
+                        <li><a href="#">Research 1</a></li>
+                        <li><a href="#">Research 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa fa-info menu-icon" aria-hidden="true"></i>About me</a></li>
             </ul>
         </div>
     </nav>

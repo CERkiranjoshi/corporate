@@ -3,3 +3,25 @@
 .custom-grid{
       padding: 10px 10px 50px 10px;
 }
+.custom-grid figcaption {
+    background: $themeColor;
+}
+.carousel{
+	.glyphicon-chevron-left,.glyphicon-chevron-right{
+		background: $themeColor;
+		color: $white;
+	}
+}
+.carousel-control{
+	width: 4%;
+	opacity:1;
+}
+.carousel-control.left,.carousel-control.right{
+background-image: none;
+}
+.carousel-caption{
+	display: none;
+}
+.theme-color{
+	color: $themeColor;
+}
