@@ -6,7 +6,11 @@
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <div ng-if="slide.type=='image'">
-                                <img class="img-responsive" ng-src="{{slide.image}}" style="margin:auto;">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <img class="img-responsive" ng-src="{{slide.image}}" style="margin:auto;">
+                                    </div>
+                                </div>
                             </div>
                             <div ng-if="slide.type=='template' && slide.template=='download'">
                                 <div class="row">
@@ -18,14 +22,14 @@
                                         <button class="btn btn-lg btn-success"><i class="fa fa-file menu-icon" aria-hidden="true"></i>Read More</button>
                                         <button class="btn btn-lg btn-custom"><i class="fa fa-download menu-icon" aria-hidden="true"></i>Download</button>
                                     </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs">
                                         <img src="img/screen.png" class="img-responsive" style="margin:auto;">
                                     </div>
                                 </div>
                             </div>
                             <div ng-if="slide.type=='template' && slide.template=='sub'">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs">
                                         <img src="img/imac.png" class="img-responsive" style="margin:auto;">
                                     </div>
                                     <div class="col-md-6 col-sm-6 col-xs-12 text-center" style="margin: auto">
@@ -39,6 +43,14 @@
                                                 <button class="btn btn-warning  btn-lg btn-custom" type="submit"><i class="fa fa-envelope-o menu-icon" aria-hidden="true"></i>Subscribe</button>
                                             </div>
                                         </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="slide.type=='template' && slide.template=='browser'">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <h1 style="font-weight: bold;">Responsive and <span class="theme-color">cross browser compatibility</span></h1>
+                                    <img src="img/browsers.png" class="img-responsive" style="margin:auto;">
                                     </div>
                                 </div>
                             </div>

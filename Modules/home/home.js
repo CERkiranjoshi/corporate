@@ -24,16 +24,10 @@ App.controller('homeController', ['$scope', '$http', function($scope, $http) {
             id: 1
         });
         slides.push({
-            type:"image",
-            image: 'img/2.jpg',
+            type:"template",
+            template: 'browser',
             text: ['Nice image', 'Awesome photograph', 'That is so cool', 'I love that'][slides.length % 4],
             id: 2
-        });
-        slides.push({
-            type:"image",
-            image: 'img/3.jpg',
-            text: ['Nice image', 'Awesome photograph', 'That is so cool', 'I love that'][slides.length % 4],
-            id: 3
         });
     };
     $scope.addData = function() {
