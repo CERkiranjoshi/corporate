@@ -15,23 +15,27 @@
     <nav class="navbar navbar-default navbar-custom-white">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand text-uppercase" href="#home"><i class="fa fa-contao logo-icon" aria-hidden="true"></i><strong>Corporate Portal</strong></a>
+                <a class="navbar-brand text-uppercase" href="#home" ng-click="setTabs('home')"><i class="fa fa-contao logo-icon" aria-hidden="true"></i><strong>Corporate Portal</strong></a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#"><i class="fa fa-home menu-icon" aria-hidden="true"></i>Home</a></li>
-                <li class="dropdown" uib-dropdown><a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" href="#"><i class="fa fa-file menu-icon" aria-hidden="true"></i>Article<span class="caret"></span></a>
+                <li ng-class="{'active':tab=='home'}"><a href="#home" ng-click="setTabs('home')"><i class="fa fa-home menu-icon" aria-hidden="true"></i>Home</a></li>
+                <li ng-class="{'active':tab=='article'}" class="dropdown" uib-dropdown><a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" href="#"><i class="fa fa-file menu-icon" aria-hidden="true"></i>Article<span class="caret"></span></a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
-                        <li><a href="#">Article 1</a></li>
-                        <li><a href="#">Article 2</a></li>
+                        <li><a href="#article" ng-click="setTabs('article')">Article 1</a></li>
+                        <li><a href="#article" ng-click="setTabs('article')">Article 2</a></li>
+                        <li><a href="#article" ng-click="setTabs('article')">Article 3</a></li>
+                        <li><a href="#article" ng-click="setTabs('article')">Article 4</a></li>
                     </ul>
                 </li>
-                <li class="dropdown" uib-dropdown><a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" href="#"><i class="fa fa-renren menu-icon" aria-hidden="true"></i>Research<span class="caret"></span></a>
+                <li ng-class="{'active':tab=='research'}" class="dropdown" uib-dropdown><a class="dropdown-toggle" uib-dropdown-toggle data-toggle="dropdown" href="#"><i class="fa fa-renren menu-icon" aria-hidden="true"></i>Research<span class="caret"></span></a>
                     <ul class="dropdown-menu" uib-dropdown-menu>
-                        <li><a href="#">Research 1</a></li>
-                        <li><a href="#">Research 2</a></li>
+                        <li><a href="#research" ng-click="setTabs('research')">Research 1</a></li>
+                        <li><a href="#research" ng-click="setTabs('research')">Research 2</a></li>
+                        <li><a href="#research" ng-click="setTabs('research')">Research 3</a></li>
+                        <li><a href="#research" ng-click="setTabs('research')">Research 4</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="fa fa-info menu-icon" aria-hidden="true"></i>About me</a></li>
+                <li ng-class="{'active':tab=='contact'}"><a href="#contact" ng-click="setTabs('contact')"><i class="fa fa-info menu-icon" aria-hidden="true"></i>Contact</a></li>
             </ul>
         </div>
     </nav>

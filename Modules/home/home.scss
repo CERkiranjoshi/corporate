@@ -25,3 +25,150 @@ background-image: none;
 .theme-color{
 	color: $themeColor;
 }
+
+
+
+//overylay code
+
+.thumbnail-box {
+	position: relative;
+	overflow: hidden;
+	margin: 0 0 0px;
+}
+
+.thumbnail-box .thumb-content,
+.thumbnail-box .thumb-link,
+.thumbnail-box .thumb-overlay {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.center-vertical {
+	position: relative;
+	z-index: 15;
+	top: 0;
+	left: 0;
+	display: table;
+	height: 100%;
+	width: 100%;
+}
+
+.zoomIn {
+	animation-name: zoomIn;
+	-webkit-animation-name: zoomIn;
+}
+
+.thumb-btn.zoomIn {
+	animation-duration: 0.5s;
+	-webkit-animation-duration: 0.5s;
+}
+
+.animated {
+	animation-fill-mode: both;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+}
+
+.center-vertical .center-content {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.thumbnail-box .thumb-btn {
+	text-align: center;
+	padding: 10px;
+}
+
+.thumbnail-box:hover .thumb-content {
+	display: block;
+}
+
+.thumbnail-box .thumb-content {
+	display: none;
+	z-index: 20;
+}
+
+.thumbnail-box .thumb-overlay.bg-black {
+	background: #041f41;
+}
+
+.thumbnail-box .thumb-overlay {
+	opacity: 0;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-ms-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+	visibility: hidden;
+	z-index: 15;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	cursor: move;
+}
+
+.thumbnail-box:hover .thumb-overlay {
+	opacity: 0.9;
+	visibility: visible;
+}
+
+.thumbnail-box img {
+	display: block;
+	width: auto;
+	max-height: 94%;
+	max-width: 94%;
+	height: auto;
+	transform: translateY(-50%);
+	top: 50%;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	transition: 0.3s all linear;
+	-webkit-transition: 0.3s all linear;
+}
+
+.thumbnail-box .img-thumbnail {
+	border-bottom: 0px;
+	border-radius: 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.thumbnail-box .innerdata {
+	height: 200px;
+	background: #fff;
+	border: 0px solid #ddd;
+	border-bottom: 0px;
+	border-radius: 0px;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.thumb-heading {
+	text-align: center;
+	font-size: 14px;
+	margin: 0;
+	text-transform: uppercase;
+	line-height: normal;
+}
+
+.thumb-heading small {
+	display: block;
+	font-size: 12px;
+	padding: 5px 0 2px;
+	text-transform: none;
+}
+.article-icon{
+	padding: 10px;
+	background: $white;
+	color: $themeColor;
+	border-radius : 25px;
+	margin-right: 10px;
+	margin-left: 10px;
+	font-size: 30px;
+	cursor: pointer; 
+}

@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div style="height: 400px;">
+                <div style="height: 388px;">
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <div ng-if="slide.type=='image'">
@@ -49,8 +49,8 @@
                             <div ng-if="slide.type=='template' && slide.template=='browser'">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                    <h1 style="font-weight: bold;">Responsive and <span class="theme-color">cross browser compatibility</span></h1>
-                                    <img src="img/browsers.png" class="img-responsive" style="margin:auto;">
+                                        <h1 style="font-weight: bold;">Responsive and <span class="theme-color">cross browser compatibility</span></h1>
+                                        <img src="img/browsers.png" class="img-responsive" style="margin:auto;">
                                     </div>
                                 </div>
                             </div>
@@ -69,40 +69,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12 custom-grid">
-                <div class="item">
-                    <figure>
-                        <div><img class="img-responsive" src="img/1.jpg" alt=""></div>
-                        <figcaption>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 custom-grid">
-                <div class="item">
-                    <figure>
-                        <div><img class="img-responsive" src="img/2.jpg" alt=""></div>
-                        <figcaption>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 custom-grid">
-                <div class="item">
-                    <figure>
-                        <div><img class="img-responsive" src="img/3.jpg" alt=""></div>
-                        <figcaption>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 custom-grid">
-                <div class="item">
-                    <figure>
-                        <div><img class="img-responsive" src="img/4.jpg" alt=""></div>
-                        <figcaption>
-                        </figcaption>
-                    </figure>
+            <div class="col-md-3 col-sm-6 col-xs-12 custom-grid" ng-repeat="article in articleList">
+                <div class="thumbnail-box-wrapper">
+                    <div class="thumbnail-box">
+                        <div class="thumb-content">
+                            <div class="center-vertical">
+                                <div class="center-content">
+                                    <div class="thumb-btn animated zoomIn">
+                                        <span class="glyphicon glyphicon-plus article-icon" tooltip-placement="top" uib-tooltip="Add" ng-click="openArticle(article)"></span>
+                                        <span class="glyphicon glyphicon-eye-open article-icon" tooltip-placement="top" uib-tooltip="View" ng-click="openArticle(article)"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumb-overlay bg-black"></div>
+                        <div class="innerdata">
+                            <img ng-src="{{article.image}}" class="img-responsive" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
