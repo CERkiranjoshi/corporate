@@ -1,38 +1,5 @@
-$color :  blue;
+@import '../App/Style/app.scss';
 
-@mixin cssProperties( $argOne, $argTwo ) {
-      #main{
-            color: $argOne;
-            background: green;
-            line-height: $argTwo;
-      }
+.custom-grid{
+      padding: 10px 10px 50px 10px;
 }
-
-@mixin boxShadow( $shadow... ) {
-      -webkit-box-shadow: $shadow;
-      -moz-box-shadow: $shadow;
-      -o-box-shadow: $shadow;
-      box-shadow: $shadow;
-}
-
-@mixin keyframes( $name ) {
-      @-webkit-keyframes #{ $name } {
-            @content;
-      }
-      @-moz-keyframes #{ $name } {
-            @content;
-      }
-      @-o-keyframes #{ $name } {
-            @content;
-      }
-      @keyframes #{ $name } {
-            @content;
-      }
-}
-
-//////////////////////////////////////////// Exported Code ///////////////////////////////////////////////////////
-
-@include keyframes( myAnim ) {
-      0% { opacity: 0 }
-      100% { opacity: 1 }
-};

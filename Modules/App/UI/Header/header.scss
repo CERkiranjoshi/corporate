@@ -1,0 +1,15 @@
+@import '../../Style/app.scss';
+.top-header{
+	background-color: $headerColor;
+	padding: 10px;
+	i{
+		color: $iconColor;
+		padding: 5px;
+	}
+	span{
+		color: $iconColor;
+	}
+}
+.navbar{
+	border-radius: 0px; 
+}

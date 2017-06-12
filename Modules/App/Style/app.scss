@@ -1,4 +1,9 @@
-$width : 600px;          $float: 1.5;            $int: 20;
+$width : 600px;
+$float: 1.5;
+$int: 20;
+$themeColor  : #e96b56;
+$headerColor: #656565;
+$iconColor : #fff;
 
 //Strings
 $string : '../images/hello.jpg';
@@ -19,11 +24,40 @@ $map: (     "key1": "value1",    "color": blue    );
 $bool: true;
 $null: null;
 
-/////////////////////////////////////// Exported Code ///////////////////////////////////////////////////
 
-div .#{ $stringSelector } {
-      width: $width;
-      line-height: $int;
-      background: url($string) $stringThree $rgba ;
-      box-shadow: $list;
+@mixin cssProperties( $argOne, $argTwo ) {
+      #main{
+            color: $argOne;
+            background: green;
+            line-height: $argTwo;
+      }
 }
+
+@mixin boxShadow( $shadow... ) {
+      -webkit-box-shadow: $shadow;
+      -moz-box-shadow: $shadow;
+      -o-box-shadow: $shadow;
+      box-shadow: $shadow;
+}
+
+@mixin keyframes( $name ) {
+      @-webkit-keyframes #{ $name } {
+            @content;
+      }
+      @-moz-keyframes #{ $name } {
+            @content;
+      }
+      @-o-keyframes #{ $name } {
+            @content;
+      }
+      @keyframes #{ $name } {
+            @content;
+      }
+}
+
+//////////////////////////////////////////// Exported Code ///////////////////////////////////////////////////////
+
+@include keyframes( myAnim ) {
+      0% { opacity: 0 }
+      100% { opacity: 1 }
+};

@@ -70,7 +70,7 @@ module.exports = function(grunt) {
     ABBR: '<%= PKG.abbr%>',
     watch: {
       scripts: {
-        files: ['<%= MODULES_DIR %>**/*.js', '<%= MODULES_DIR %>**/*.scss', '<%= MODULES_DIR %>**/*.html'],
+        files: ['<%= MODULES_DIR %>**/*.js', '<%= MODULES_DIR %>**/*.scss','<%= MODULES_DIR %>**/*.jade', '<%= MODULES_DIR %>**/*.html'],
         tasks: 'dev'
       }
     },
@@ -169,7 +169,7 @@ module.exports = function(grunt) {
             expand: true,
             flatten: true,
             cwd: '<%= COMPONENTS_DIR %>',
-            src: ['bootstrap/dist/css/bootstrap.css','bootstrap/dist/css/bootstrap-theme.css'],
+            src: ['bootstrap/dist/css/bootstrap.css','bootstrap/dist/css/bootstrap-theme.css','components-font-awesome/css/font-awesome.css'],
             dest: '<%= TMP_DIR %>client/css/'
           },
           {

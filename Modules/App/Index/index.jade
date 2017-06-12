@@ -24,17 +24,8 @@ html(lang='en')
 		<% } %>
 
 	body
-
-		//- Show something to non JS users
 		noscript Please enable Javascript to experience this site :)
-
-		//- Alerts & Messages
-		//- ng-cloak not working in new lib of angular ui.. so we added div above with display none & letter on app.coffee enable it to make it work.
-		div#alert-manage(style="display:none")
-			#alert-control(uib-alert,ng-repeat='alert in alerts', type="{{alert.type}}",ng-class="'alert-' + (alert.type || 'warning')", close='$root.closeAlert($index)', ng-cloak, ng-show="alerts.length > 0") {{alert.message}}
-
-
 		include ../UI/Header/header.html
-
-		.page-area
+		.content-area
 			div(ng-view)
+		include ../UI/Footer/footer.html

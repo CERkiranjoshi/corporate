@@ -1,0 +1,59 @@
+@import '../../Style/app.scss';
+footer {
+    padding: 20px 0 0 0;
+    color: #bbb;
+    background: #222;
+    .social-links i{
+    	margin-right: 5px;
+    }
+    .btn-custom{
+    	background-color: $themeColor;
+    	color: $iconColor;
+    	border-color : $themeColor;
+    }
+    .btn-custom:hover,.btn-custom:focus,.btn-custom:active,.btn-custom:active:hover{
+    	background-color: $themeColor;
+    	border-color : $themeColor;
+    }
+}
+#sub-footer {
+    background: #111;
+    text-shadow: none;
+    color: #ddd;
+    padding: 20px 0px 20px 0px;
+    -webkit-box-shadow: 0 -4px 4px -2px #222;
+    -moz-box-shadow: 0 -4px 4px -2px #222;
+    box-shadow: 0 -4px 4px -2px #222;
+}
+footer h5.widgetheading {
+    text-transform: none;
+    font-weight: 600;
+    font-size: 22px;
+    color: #eee;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+ul.link-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul.link-list li {
+    margin: 0;
+    padding: 2px 0 2px 0;
+    list-style: none;
+}
+footer ul.link-list li a {
+    color: #ddd;
+    font-weight: 300;
+}
+footer a {
+    color: #eee;
+    text-decoration: none;
+}
+footer a:hover {
+	text-decoration:none;
+}
+footer ul.link-list li a:hover,.designby:hover {
+    color: #e96b56;
+}
