@@ -1,6 +1,6 @@
 Corporate WEB
 ==============================
-Developed using Angular JS, Grunt
+Developed using Angular JS, Grunt , Sass
 
 
 ## Requirements
