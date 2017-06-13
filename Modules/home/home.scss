@@ -1,7 +1,7 @@
 @import '../App/Style/app.scss';
 
 .custom-grid{
-      padding: 10px 10px 50px 10px;
+      padding: 10px 10px 10px 10px;
 }
 .custom-grid figcaption {
     background: $themeColor;
@@ -13,19 +13,29 @@
 	}
 }
 .carousel-control{
-	width: 4%;
-	opacity:1;
+	 width: 4%;
 }
 .carousel-control.left,.carousel-control.right{
 background-image: none;
 }
-.carousel-caption{
+.carousel-caption,.carousel-indicators{
 	display: none;
 }
 .theme-color{
 	color: $themeColor;
 }
-
+.carousel-inner {
+  max-height: 500px;
+  height: 500px;
+  overflow: hidden;
+  margin: auto;
+  img {
+    width: auto;
+    height: 240px;
+    margin: auto;
+    margin-top: 10px;
+  }
+}
 
 
 //overylay code
@@ -106,8 +116,7 @@ background-image: none;
 	transition: 0.2s ease-in-out;
 	visibility: hidden;
 	z-index: 15;
-	border-top-left-radius: 4px;
-	border-top-right-radius: 4px;
+	border-radius: 4px;
 	cursor: move;
 }
 

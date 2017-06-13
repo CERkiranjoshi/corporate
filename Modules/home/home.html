@@ -1,46 +1,43 @@
 <section id="works">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div style="height: 388px;">
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div>
                     <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
                         <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
                             <div ng-if="slide.type=='image'">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <img class="img-responsive" ng-src="{{slide.image}}" style="margin:auto;">
+                                        <img class="img-responsive" ng-src="{{slide.image}}" style="margin:auto; ">
                                     </div>
                                 </div>
                             </div>
                             <div ng-if="slide.type=='template' && slide.template=='download'">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12 text-center" style="margin: auto">
-                                        <h1 style="font-weight: bold;">Article template for <span class="theme-color">multi usage</span></h1>
-                                        <br>
-                                        <h4> Now you can generate your custom article with single click , checkout more details Read more Or download pdf for more tips & triks</h4>
-                                        <br>
-                                        <button class="btn btn-lg btn-success"><i class="fa fa-file menu-icon" aria-hidden="true"></i>Read More</button>
-                                        <button class="btn btn-lg btn-custom"><i class="fa fa-download menu-icon" aria-hidden="true"></i>Download</button>
+                                    <div class="col-md-12 col-sm-6 col-xs-12 text-center" style="margin: auto;">
+                                        <h3 style="font-weight: bold;">Article template for <span class="theme-color">multi usage</span></h3>
+                                        <h5> Now you can generate your custom article with single click , checkout more details Read more Or download pdf for more tips & triks</h5>
+                                        <button class="btn btn-md btn-success"><i class="fa fa-file menu-icon" aria-hidden="true"></i>Read More</button>
+                                        <button class="btn btn-md btn-custom"><i class="fa fa-download menu-icon" aria-hidden="true"></i>Download</button>
                                     </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs">
-                                        <img src="img/screen.png" class="img-responsive" style="margin:auto;">
+                                    <div class="col-md-12 col-sm-6 col-xs-12 hidden-xs" style="margin-top: 20px;">
+                                        <img src="img/screen.png" class="img-responsive">
                                     </div>
                                 </div>
                             </div>
                             <div ng-if="slide.type=='template' && slide.template=='sub'">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs">
-                                        <img src="img/imac.png" class="img-responsive" style="margin:auto;">
+                                    <div class="col-md-12 col-sm-6 col-xs-12 hidden-xs">
+                                        <img src="img/imac.png" class="img-responsive">
                                     </div>
-                                    <div class="col-md-6 col-sm-6 col-xs-12 text-center" style="margin: auto">
-                                        <h1 style="font-weight: bold;">Put your <span class="theme-color">Opt in form</span></h1>
-                                        <br>
-                                        <h4> Keep updated for new releases and freebies. Enter your e-mail and subscribe to our newsletter.</h4>
+                                    <div class="col-md-12 col-sm-6 col-xs-12 text-center" style="margin: auto>
+                                        <h3 style="font-weight: bold;">Put your <span class="theme-color">Opt in form</span></h3>
+                                        <h5> Keep updated for new releases and freebies. Enter your e-mail and subscribe to our newsletter.</h5>
                                         <br>
                                         <form class="form-inline">
-                                            <div class="form-group">
-                                                <input placeholder="Email address" class="form-control input-lg" id="appendedInputButton" type="text">
-                                                <button class="btn btn-warning  btn-lg btn-custom" type="submit"><i class="fa fa-envelope-o menu-icon" aria-hidden="true"></i>Subscribe</button>
+                                            <div class="form-group col-xs-12">
+                                                <input placeholder="Email address" style="width: 180px;" class="form-control input-md" id="appendedInputButton" type="text">
+                                                <button class="btn btn-warning  btn-md btn-custom" type="submit"><i class="fa fa-envelope-o menu-icon" aria-hidden="true"></i>Subscribe</button>
                                             </div>
                                         </form>
                                     </div>
@@ -48,9 +45,12 @@
                             </div>
                             <div ng-if="slide.type=='template' && slide.template=='browser'">
                                 <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12">
-                                        <h1 style="font-weight: bold;">Responsive and <span class="theme-color">cross browser compatibility</span></h1>
-                                        <img src="img/browsers.png" class="img-responsive" style="margin:auto;">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs" >
+                                        <h3 style="font-weight: bold;">Responsive and <span class="theme-color">cross browser compatibility</span></h3>
+                                        <img src="img/browsers.png" class="img-responsive">
+                                    </div>
+                                    <div class="col-md-12 col-sm-6 col-xs-12 hidden-sm">
+                                         <img src="img/responsive2.png" class="img-responsive" style="height: 180px;">
                                     </div>
                                 </div>
                             </div>
@@ -58,37 +58,37 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<section id="works">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <h3 class="title">Recent <strong>Article</strong></h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-6 col-xs-12 custom-grid" ng-repeat="article in articleList">
-                <div class="thumbnail-box-wrapper">
-                    <div class="thumbnail-box">
-                        <div class="thumb-content">
-                            <div class="center-vertical">
-                                <div class="center-content">
-                                    <div class="thumb-btn animated zoomIn">
-                                        <span class="glyphicon glyphicon-plus article-icon" tooltip-placement="top" uib-tooltip="Add" ng-click="openArticle(article)"></span>
-                                        <span class="glyphicon glyphicon-eye-open article-icon" tooltip-placement="top" uib-tooltip="View" ng-click="openArticle(article)"></span>
+            <div class="col-md-6 col-sm-12 col-xs-12">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h3 class="title"><i class="fa fa-file menu-icon theme-color" aria-hidden="true"></i> Recent <strong class="theme-color">Article</strong></h4>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-12 custom-grid" ng-repeat="article in articleList">
+                        <div class="thumbnail-box-wrapper">
+                            <div class="thumbnail-box">
+                                <div class="thumb-content">
+                                    <div class="center-vertical">
+                                        <div class="center-content">
+                                            <div class="thumb-btn animated zoomIn">
+                                                <span class="glyphicon glyphicon-plus article-icon" tooltip-placement="top" uib-tooltip="Add" ng-click="openArticle(article)"></span>
+                                                <span class="glyphicon glyphicon-eye-open article-icon" tooltip-placement="top" uib-tooltip="View" ng-click="openArticle(article)"></span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="thumb-overlay bg-black"></div>
+                                <div class="innerdata">
+                                    <img ng-src="{{article.image}}" class="img-responsive" />
+                                </div>
                             </div>
-                        </div>
-                        <div class="thumb-overlay bg-black"></div>
-                        <div class="innerdata">
-                            <img ng-src="{{article.image}}" class="img-responsive" />
                         </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
