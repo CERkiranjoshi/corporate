@@ -31,4 +31,4 @@ Developed using Angular JS, Grunt , Sass
 * Note : in production all css & js file is minified.
 
 ## Usefull Notes
-* you can change color of all web by going into `Modules\App\Style\app.scss` & change $themeColor value
+* you can change color of all web by going into `Modules\App\Style\app.scss` & change $themeColor value after that you need to run grunt task based on dev or prod
