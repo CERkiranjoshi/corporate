@@ -20,3 +20,15 @@ Developed using Angular JS, Grunt , Sass
 * `grunt release` Create and deploy a release build
 * `grunt watch` Watches for changes in the Modu8les folder and rebuilds dev branch as needed.
 * `grunt connect` Runs the app on a local server
+
+## where to find code that needs to be go on live with developemnet code
+* when you run grunt or grunt dev command your code is genrated in `_BUILD\dev\client`
+* and if you want to deploy that code, then just copy it from `_BUILD\dev\client` directory & put on your server `public_html` folder
+
+## where to find code that needs to be go on live with production code
+* when you run grunt release command your code is genrated in `_BUILD\release\client`
+* and if you want to deploy that code, then just copy it from `_BUILD\release\client` directory & put on your server `public_html` folder
+* Note : in production all css & js file is minified.
+
+## Usefull Notes
+* you can change color of all web by going into `Modules\App\Style\app.scss` & change $themeColor value
