@@ -1,10 +1,6 @@
 {
-	"name": "NBC",
-	"organisation_key": "nbc",
-	"url": "https://nbc-staging.bijouadmin.com",
-	"url_insecure": "http://nbc-staging.bijouadmin.com",
-	"uuid": "db7f1bc8-9754-4d32-83cb-7d74369352f6",
-	"image_aws_url":"https://dejva2nsp46gf.cloudfront.net/client/cms/",
-	"analytics_viewid" : "ga:120781962",
-	"currency": "£"
+	"name": "corporate",
+	"organisation_key": "corporate",
+	"url": "https://corporate-dev.corporateadmin.com",
+	"url_insecure": "http://corporate-staging.corporateadmin.com",
 }
