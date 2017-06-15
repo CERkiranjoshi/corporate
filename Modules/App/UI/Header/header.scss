@@ -1,4 +1,7 @@
 @import '../../Style/app.scss';
+body{
+      font-size: $fontSize;
+}
 .top-header{
 	background-color: $headerColor;
 	padding: 10px;
@@ -13,6 +16,10 @@
 .navbar{
 	border-radius: 0px; 
 }
+hr{
+      margin-top: 5px;
+      margin-bottom: 5px;
+}
 .logo-icon{
 	color: $themeColor;
 	font-size: 18px;
@@ -23,8 +30,8 @@
 	margin-right: 5px;
 }
 .navbar-custom-white{
-	background-color:$white;
-	border-color:$white;
+	background-color:$navbarColor;
+	border-color:$navbarColor;
 	background-image :none;
 }
 .navbar-brand{

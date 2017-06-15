@@ -3,7 +3,7 @@ footer {
     padding: 20px 0 0 0;
     margin-top: 10px;
     color: #bbb;
-    background: #222;
+    background: $footerColor;
     .social-links i {
         margin-right: 5px;
     }
@@ -25,7 +25,7 @@ footer {
 }
 
 #sub-footer {
-    background: #111;
+    background: $subfooterColor;
     text-shadow: none;
     color: #ddd;
     padding: 20px 0px 20px 0px;
