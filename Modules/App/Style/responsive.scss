@@ -1,0 +1,41 @@
+@import 'app.scss';
+
+@media (max-width: 480px){
+	.carousel-inner {
+		  max-height: 205px;
+		  height: 205px;
+		}
+	.top-header-phone,.top-header-social,.footer-copyright,.footer-designby{
+		text-align: center !important;
+	}
+	.email-address-input{
+		display: inline-block !important;
+		width: 120px !important;;
+	}
+}
+@media (min-width: 481px) and (max-width: 769px){
+	.carousel-inner {
+		  max-height: 260px;
+		  height: 260px;
+		}
+}
+@media (min-width: 769px) and (max-width: 1199px){
+	.carousel-inner {
+		  max-height: 500px;
+		  height: 500px;
+		  img {
+		    height: 240px;
+		    margin-top: 10px;
+		  }
+		}
+}
+@media (min-width: 1200px){
+	.carousel-inner {
+		  max-height: 500px;
+		  height: 500px;
+		  img {
+		    height: 240px;
+		    margin-top: 10px;
+		  }
+		}
+}

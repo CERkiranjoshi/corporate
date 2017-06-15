@@ -1,1 +1,21 @@
 @import '../App/Style/app.scss';
+.form-horizontal .form-group{
+	margin: 0px 0px 15px 0px;
+}
+ul.contact-info {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul.contact-info li label {
+    font-weight: 700;
+    display: block;
+}
+ul.contact-info li {
+    margin: 0 0 15px 0;
+    list-style: none;
+}
+.right-sidebar {
+    border-left: 1px solid #e9e9e9;
+    padding: 0 0 0 30px;
+}
