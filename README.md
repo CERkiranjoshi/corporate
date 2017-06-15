@@ -31,4 +31,17 @@ Developed using Angular JS, Grunt , Sass
 * Note : in production all css & js file is minified.
 
 ## Usefull Notes
-* you can change color of all web by going into `Modules\App\Style\app.scss` & change $themeColor value after that you need to run grunt task based on dev or prod
+* you can change color of all web by going into `Modules\App\Style\app.scss` & change it's value after that you need to run grunt task based on dev or prod.
+you can change below variable.
+ * All web theme color also including highlight text color:
+  $themeColor  : #e96b56;
+* headerColor: Top bar where we show linkedin, facebook links
+  $headerColor: #656565;
+* navbarColor : Navigation Bar color
+  $navbarColor:#fff;
+* footerColor : Footer color
+  $footerColor:#222;
+* subfooterColor : sub Footer color
+  $subfooterColor:#111;
+* web font size
+  $fontSize:14px;
