@@ -26,7 +26,7 @@ App.config(['$httpProvider', '$locationProvider', '$sceDelegateProvider', '$qPro
         //$httpProvider.interceptors.push('HttpInterceptor');
         $qProvider.errorOnUnhandledRejections(false);
     }]);
-App.run(function ($rootScope, $http, $timeout,$interval,$location) {
+App.run(['$rootScope','$timeout','$interval','$location',function ($rootScope, $http, $timeout,$interval,$location) {
     $rootScope.tab='home';
     $rootScope.notifier = function (params, callback) {
         $rootScope.error = {}
@@ -64,4 +64,4 @@ App.run(function ($rootScope, $http, $timeout,$interval,$location) {
     $rootScope.setTabs = function (tab) {
          $rootScope.tab=tab;
     }
-});
+}]);
